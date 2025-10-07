@@ -5,11 +5,10 @@ services:
       context: ./
       dockerfile: ./docker/node/Dockerfile
     tty: true
-    working_dir: /usr/src/app
     volumes:
-      - ./src:/usr/src/app
-      #- dist:/usr/src/app/html/js/dist/
-      #- node_modules:/usr/src/app/node_modules/
+      - ./src:/usr/src
+      - dist:/usr/src/dist/
+      - node_modules:/usr/src/node_modules/
     ports:
       - '3000:3000'
 

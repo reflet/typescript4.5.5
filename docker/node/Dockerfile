@@ -3,16 +3,16 @@
 FROM node:12
 
 # Create an application directory.
-WORKDIR /usr/src/app
+WORKDIR /usr/src
 
 # Bundle application sources.
-COPY ./src/ /usr/src/app
+COPY ./src/ /usr/src
 
 # Node.js オプション設定 (memory up)
 ENV NODE_OPTIONS "--max-old-space-size=4096"
 
 # Install application dependencies.
-#RUN npm install
+RUN npm install
 
 # build in test mode and create a dist folder.
-#RUN npm run build
+RUN npx tsc
